@@ -1,0 +1,13 @@
+{
+  "data": [
+    { "firstName": "xyi", "lastName": "Wilson" },
+    { "firstName": "Ian", "lastName": "Nodier" },
+    { "firstName": "Petra", "lastName": "Vileid" },
+    { "firstName": "Ian", "lastName": "Nodier" },
+    { "firstName": "Petra", "lastName": "Vileid" }
+  ],
+  "columns": [
+    { "label": "xyi", "dataField": "firstName" },
+    { "label": "Last Name", "dataField": "lastName" }
+  ]
+}

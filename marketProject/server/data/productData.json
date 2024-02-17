@@ -1,0 +1,13 @@
+{
+  "data": [
+    { "firstName": "Potato" },
+    { "firstName": "Potato" },
+    { "firstName": "Potato" },
+    { "firstName": "Potato" }
+  ],
+
+  "columns": [
+    { "label": "First Name", "dataField": "firstName" },
+    { "label": "Last Name", "dataField": "lastName" }
+  ]
+}
