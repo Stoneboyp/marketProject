@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./style.module.scss";
+import { AppContext } from "@contexts/AppContexts";
 
 export const List = ({ data, columns }) => {
+  const { filterValue } = useContext(AppContext);
+  let filteredData = data;
+  if (filterValue.trim() !== "") {
+    filteredData = data.filter((item) => {
+      return Object.values(item).some((field) =>
+        field.toString().toLowerCase().includes(filterValue.toLowerCase())
+      );
+    });
+  }
+
   return (
     <div className={style.tableContainer}>
       <table>
@@ -13,7 +24,7 @@ export const List = ({ data, columns }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {filteredData.map((item, index) => (
             <tr key={index}>
               {columns.map((column, columnIndex) => (
                 <td key={columnIndex}>{item[column.dataField]}</td>

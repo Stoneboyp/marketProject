@@ -1,7 +1,7 @@
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import { AppContext } from "@contexts/AppContexts";
 export const Filter = ({ onFilter }) => {
-  const [filterValue, setFilterValue] = useState("");
+  const { filterValue, setFilterValue } = useContext(AppContext);
 
   const handleInputChange = (event) => {
     setFilterValue(event.target.value);
@@ -13,7 +13,7 @@ export const Filter = ({ onFilter }) => {
     <div>
       <input
         type="text"
-        placeholder="search by name"
+        placeholder="search by value"
         value={filterValue}
         onChange={handleInputChange}
       ></input>

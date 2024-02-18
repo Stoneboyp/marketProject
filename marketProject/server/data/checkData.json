@@ -1,7 +1,7 @@
 {
   "data": [
     { "firstName": "Ian", "lastName": "Wilson", "productType": "Tomato" },
-    { "firstName": "Van", "lastName": "Chester" }
+    { "firstName": "Van", "lastName": "Chester","productType": "Orange" }
   ],
   "columns": [
     { "label": "firstName", "dataField": "firstName" },
