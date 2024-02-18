@@ -23,11 +23,11 @@ export const useGetChecks = () => {
 };
 
 export const useAddSeller = () => {
-  return useMutation(async (newSeller) => {
-    const response = await axios.post(
-      "http://localhost:3000/sellers",
-      newSeller
-    );
+  return useMutation(async ({ firstName, lastName }) => {
+    const response = await axios.post("http://localhost:3000/addSeller", {
+      firstName,
+      lastName,
+    });
     return response.data;
   });
 };
@@ -35,15 +35,19 @@ export const useAddSeller = () => {
 export const useAddProduct = () => {
   return useMutation(async (newProduct) => {
     const response = await axios.post(
-      "http://localhost:3000/product",
+      "http://localhost:3000/addProduct",
       newProduct
     );
     return response.data;
   });
 };
 export const useAddCheck = () => {
-  return useMutation(async (newCheck) => {
-    const response = await axios.post("http://localhost:3000/check", newCheck);
+  return useMutation(async ({ firstName, lastName, productType }) => {
+    const response = await axios.post("http://localhost:3000/addCheck", {
+      firstName,
+      lastName,
+      productType,
+    });
     return response.data;
   });
 };

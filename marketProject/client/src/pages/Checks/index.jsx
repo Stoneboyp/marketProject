@@ -1,4 +1,4 @@
-import { ChecksList } from "@widgets/ChecksList";
+import { List } from "@entities/List";
 import { ChecksFilter } from "@pages/Checks/ChecksFilter";
 import { AppContext } from "@contexts/AppContexts";
 import { AddValueModal } from "@features/AddValueModal";
@@ -9,7 +9,12 @@ import { useGetChecks } from "@services/sellers";
 
 export const Checks = () => {
   const { data, isLoading, error } = useGetChecks();
-  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
+  const { isModalOpen, setIsModalOpen, checks, setCheks } =
+    useContext(AppContext);
+
+  const handleAddCheck = (newCheck) => {
+    setCheks([...checks, newCheck]);
+  };
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -21,9 +26,11 @@ export const Checks = () => {
           <ChecksFilter />
           <ModalButton />
         </div>
-        <ChecksList data={data.data} columns={data.columns} />
+        <List data={data.data} columns={data.columns} />
       </div>
-      {isModalOpen && <AddValueModal />}
+      {isModalOpen && (
+        <AddValueModal dataType={"check"} addData={handleAddCheck} />
+      )}
     </>
   );
 };

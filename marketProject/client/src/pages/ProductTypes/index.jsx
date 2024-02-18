@@ -1,4 +1,4 @@
-import { ProductList } from "@widgets/ProductList";
+import { List } from "@entities/List";
 import { ProductFilter } from "@pages/ProductTypes/ProductFilter";
 import { AppContext } from "@contexts/AppContexts";
 import { AddValueModal } from "@features/AddValueModal";
@@ -10,7 +10,11 @@ import styles from "@pages/style.module.scss";
 export const ProductTypes = () => {
   const { data, isLoading, error } = useGetProducts();
 
-  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
+  const { isModalOpen, setIsModalOpen, products, setProducts } =
+    useContext(AppContext);
+  const handleAddProduct = (newProduct) => {
+    setSellers([...products, newProduct]);
+  };
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -22,9 +26,11 @@ export const ProductTypes = () => {
           <ProductFilter />
           <ModalButton />
         </div>
-        <ProductList data={data.data} columns={data.columns} />
+        <List data={data.data} columns={data.columns} />
       </div>
-      {isModalOpen && <AddValueModal />}
+      {isModalOpen && (
+        <AddValueModal dataType={"product"} addData={handleAddProduct} />
+      )}
     </>
   );
 };

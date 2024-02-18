@@ -1,13 +1,11 @@
 {
   "data": [
-    { "firstName": "xyi", "lastName": "Wilson" },
-    { "firstName": "Ian", "lastName": "Nodier" },
-    { "firstName": "Petra", "lastName": "Vileid" },
-    { "firstName": "Ian", "lastName": "Nodier" },
-    { "firstName": "Petra", "lastName": "Vileid" }
+    { "firstName": "Ian", "lastName": "Wilson", "productType": "Tomato" },
+    { "firstName": "Van", "lastName": "Chester" }
   ],
   "columns": [
-    { "label": "xyi", "dataField": "firstName" },
-    { "label": "Last Name", "dataField": "lastName" }
+    { "label": "firstName", "dataField": "firstName" },
+    { "label": "Last Name", "dataField": "lastName" },
+    { "label": "Product Type", "dataField": "productType" }
   ]
 }

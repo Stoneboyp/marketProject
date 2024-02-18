@@ -1,4 +1,4 @@
-import { SellerList } from "@widgets/SellerList";
+import { List } from "@entities/List";
 import { SellerFilter } from "@pages/Sellers/SellerFilter";
 import { AppContext } from "@contexts/AppContexts";
 import { AddValueModal } from "@features/AddValueModal";
@@ -13,6 +13,7 @@ export const Sellers = () => {
   const handleAddSeller = (newSeller) => {
     setSellers([...sellers, newSeller]);
   };
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -23,10 +24,10 @@ export const Sellers = () => {
           <SellerFilter />
           <ModalButton />
         </div>
-        <SellerList data={data.data} columns={data.columns} />
+        <List data={data.data} columns={data.columns} />
       </div>
       {isModalOpen && (
-        <AddValueModal dataType="seller" addData={handleAddSeller} />
+        <AddValueModal dataType={"seller"} addData={handleAddSeller} />
       )}
     </>
   );

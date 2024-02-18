@@ -1,13 +1,11 @@
 {
   "data": [
-    { "firstName": "Potato" },
-    { "firstName": "Potato" },
-    { "firstName": "Potato" },
-    { "firstName": "Potato" }
+    { "productType": "Potato" },
+    { "productType": "Lemon" },
+    { "productType": "Cupcakes" },
+    { "productType": "Tomato" },
+    { "productType": "Orange" },
+    { "productType": "Juice" }
   ],
-
-  "columns": [
-    { "label": "First Name", "dataField": "firstName" },
-    { "label": "Last Name", "dataField": "lastName" }
-  ]
+  "columns": [{ "label": "Product Type", "dataField": "productType" }]
 }
