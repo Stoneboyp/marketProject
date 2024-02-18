@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import axios from "axios";
 
 export const useGetSellers = () => {
@@ -18,6 +18,32 @@ export const useGetProducts = () => {
 export const useGetChecks = () => {
   return useQuery("checks", async () => {
     const response = await axios.get("http://localhost:3000/checks");
+    return response.data;
+  });
+};
+
+export const useAddSeller = () => {
+  return useMutation(async (newSeller) => {
+    const response = await axios.post(
+      "http://localhost:3000/sellers",
+      newSeller
+    );
+    return response.data;
+  });
+};
+
+export const useAddProduct = () => {
+  return useMutation(async (newProduct) => {
+    const response = await axios.post(
+      "http://localhost:3000/product",
+      newProduct
+    );
+    return response.data;
+  });
+};
+export const useAddCheck = () => {
+  return useMutation(async (newCheck) => {
+    const response = await axios.post("http://localhost:3000/check", newCheck);
     return response.data;
   });
 };

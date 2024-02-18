@@ -8,8 +8,11 @@ import { useGetSellers } from "@services/sellers";
 import styles from "@pages/style.module.scss";
 export const Sellers = () => {
   const { data, isLoading, error } = useGetSellers();
-  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
-
+  const { isModalOpen, setIsModalOpen, sellers, setSellers } =
+    useContext(AppContext);
+  const handleAddSeller = (newSeller) => {
+    setSellers([...sellers, newSeller]);
+  };
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -22,7 +25,9 @@ export const Sellers = () => {
         </div>
         <SellerList data={data.data} columns={data.columns} />
       </div>
-      {isModalOpen && <AddValueModal />}
+      {isModalOpen && (
+        <AddValueModal dataType="seller" addData={handleAddSeller} />
+      )}
     </>
   );
 };
