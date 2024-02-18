@@ -7,7 +7,7 @@
     { "firstName": "Petra", "lastName": "Vileid" }
   ],
   "columns": [
-    { "label": "firstName", "dataField": "firstName" },
+    { "label": "First Name", "dataField": "firstName" },
     { "label": "Last Name", "dataField": "lastName" }
   ]
 }

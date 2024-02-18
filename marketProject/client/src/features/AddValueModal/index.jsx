@@ -41,12 +41,12 @@ export const AddValueModal = ({ dataType }) => {
   };
 
   return createPortal(
-    <div className={styles["modal-overlay"]}>
-      <div className={styles["modal-content"]}>
-        <div className={styles["modal-header"]}>
-          <h2 style={{ color: "black" }}>Add {dataType}</h2>
+    <div className={styles.overlay}>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <h2>Add {dataType}</h2>
         </div>
-        <div className={styles["modal-body"]}>
+        <div className={styles.body}>
           {(dataType === "seller" || dataType === "check") && (
             <>
               <input
@@ -84,7 +84,7 @@ export const AddValueModal = ({ dataType }) => {
             />
           )}
         </div>
-        <div className={styles["modal-footer"]}>
+        <div className={styles.footer}>
           <button onClick={handleAddValue}>Add</button>
           <button onClick={handleButton}>Cancel</button>
         </div>
