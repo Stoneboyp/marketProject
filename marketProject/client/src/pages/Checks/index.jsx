@@ -1,5 +1,5 @@
 import { List } from "@entities/List";
-import { ChecksFilter } from "@pages/Checks/ChecksFilter";
+import { Filter } from "@features/Filter";
 import { AppContext } from "@contexts/AppContexts";
 import { AddValueModal } from "@features/AddValueModal";
 import { ModalButton } from "@features/ModalButton";
@@ -23,7 +23,7 @@ export const Checks = () => {
     <>
       <div className={styles.container}>
         <div className={styles.header}>
-          <ChecksFilter />
+          <Filter />
           <ModalButton />
         </div>
         <List data={data.data} columns={data.columns} />

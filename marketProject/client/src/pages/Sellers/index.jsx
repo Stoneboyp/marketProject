@@ -1,5 +1,5 @@
 import { List } from "@entities/List";
-import { SellerFilter } from "@pages/Sellers/SellerFilter";
+import { Filter } from "@features/Filter";
 import { AppContext } from "@contexts/AppContexts";
 import { AddValueModal } from "@features/AddValueModal";
 import { ModalButton } from "@features/ModalButton";
@@ -21,7 +21,7 @@ export const Sellers = () => {
     <>
       <div className={styles.container}>
         <div className={styles.header}>
-          <SellerFilter />
+          <Filter />
           <ModalButton />
         </div>
         <List data={data.data} columns={data.columns} />

@@ -1,5 +1,5 @@
 import { List } from "@entities/List";
-import { ProductFilter } from "@pages/ProductTypes/ProductFilter";
+import { Filter } from "@features/Filter";
 import { AppContext } from "@contexts/AppContexts";
 import { AddValueModal } from "@features/AddValueModal";
 import { useGetProducts } from "@services/sellers";
@@ -23,7 +23,7 @@ export const ProductTypes = () => {
     <>
       <div className={styles.container}>
         <div className={styles.header}>
-          <ProductFilter />
+          <Filter />
           <ModalButton />
         </div>
         <List data={data.data} columns={data.columns} />
