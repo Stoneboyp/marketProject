@@ -24,13 +24,10 @@ export const useGetChecks = () => {
 
 export const useAddSeller = () => {
   return useMutation(async ({ firstName, lastName }) => {
-    const response = await axios.post(
-      "http://localhost:3000/sellers/addSeller",
-      {
-        firstName,
-        lastName,
-      }
-    );
+    const response = await axios.post("http://localhost:3000/sellers", {
+      firstName,
+      lastName,
+    });
     return response.data;
   });
 };

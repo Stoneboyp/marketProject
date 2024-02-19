@@ -19,7 +19,7 @@ function App() {
             <h2>Sellers</h2>
           </Link>
           <Link to="/products">
-            <h2>ProductTypes</h2>
+            <h2>Product Types</h2>
           </Link>
           <Link to="/checks">
             <h2>Checks</h2>

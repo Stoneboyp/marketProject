@@ -8,7 +8,7 @@ export const ModalButton = () => {
   };
   return (
     <button className={style.modalButton} onClick={handleModalOpen}>
-      Add Seller
+      Add
     </button>
   );
 };

@@ -9,10 +9,6 @@ export const Filter = ({ onFilter }) => {
     setFilterValue(event.target.value);
   };
 
-  const applyFilter = () => {
-    onFilter(filterValue);
-  };
-
   return (
     <div className={style.filterContainer}>
       <input
@@ -22,9 +18,6 @@ export const Filter = ({ onFilter }) => {
         onChange={handleInputChange}
         className={style.inputField}
       />
-      <button onClick={applyFilter} className={style.filterButton}>
-        find
-      </button>
     </div>
   );
 };
