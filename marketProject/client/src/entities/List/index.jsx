@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import style from "./style.module.scss";
 import { AppContext } from "@contexts/AppContexts";
 
 export const List = ({ data, columns }) => {
-  const { filterValue } = useContext(AppContext);
+  const { filterValue, cart, setCart, selectedItem, setSelectedItem } =
+    useContext(AppContext);
   let filteredData = data;
   if (filterValue.trim() !== "") {
     filteredData = data.filter((item) => {
@@ -12,6 +13,20 @@ export const List = ({ data, columns }) => {
       );
     });
   }
+  const addToCart = (item) => {
+    setSelectedItem(item);
+    if (!document.location.pathname.includes("/checks")) {
+      if (location.pathname === "/sellers") {
+        setCart((prevCart) => ({
+          ...prevCart,
+          firstName: item.firstName,
+          lastName: item.lastName,
+        }));
+      } else if (location.pathname === "/products") {
+        setCart((prevCart) => ({ ...prevCart, productType: item.productType }));
+      }
+    }
+  };
 
   return (
     <div className={style.tableContainer}>
@@ -25,9 +40,13 @@ export const List = ({ data, columns }) => {
         </thead>
         <tbody>
           {filteredData.map((item, index) => (
-            <tr key={index}>
+            <tr
+              key={index}
+              onClick={() => addToCart(item)}
+              className={selectedItem === item ? style.selected : ""}
+            >
               {columns.map((column, columnIndex) => (
-                <td key={columnIndex}>{item[column.dataField]}</td>
+                <td key={columnIndex}>{item[column.dataField]} </td>
               ))}
             </tr>
           ))}

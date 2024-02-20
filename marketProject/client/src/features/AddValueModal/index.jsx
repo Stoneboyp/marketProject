@@ -1,16 +1,24 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { useAddSeller, useAddProduct, useAddCheck } from "@services/sellers";
+import { useAddSeller } from "@services/sellers";
+import { useAddProduct } from "@services/products";
+import { useAddCheck } from "@services/checks";
 import { AppContext } from "@contexts/AppContexts";
 import styles from "./style.module.scss";
 
 export const AddValueModal = ({ dataType }) => {
-  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
+  const { isModalOpen, setIsModalOpen, cart } = useContext(AppContext);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     productType: "",
   });
+
+  useEffect(() => {
+    if (dataType === "check" && cart) {
+      setFormData(cart);
+    }
+  }, [dataType, cart]);
 
   const addSellerMutation = useAddSeller();
   const addProductMutation = useAddProduct();
@@ -85,7 +93,9 @@ export const AddValueModal = ({ dataType }) => {
           )}
         </div>
         <div className={styles.footer}>
-          <button onClick={handleAddValue}>Add</button>
+          <button onClick={handleAddValue}>
+            {dataType === "check" ? "Buy" : "Add"}
+          </button>
           <button onClick={handleButton}>Cancel</button>
         </div>
       </div>

@@ -11,7 +11,12 @@ td {
   text-align: left;
   color: black;
 }
-
-
+tr:hover {
+  background-color: rgb(184, 196, 200);
+  cursor: pointer; 
+}
+tr.selected {
+  background-color: rgb(111, 170, 182);
+}
 
 

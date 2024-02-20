@@ -1,4 +1,5 @@
 const express = require("express");
+
 const sellersRouter = require("./routes/sellers");
 const productsRouter = require("./routes/products");
 const checksRouter = require("./routes/checks");

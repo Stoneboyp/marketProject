@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 const sellerData = require("../data/sellerData.json");
+const { addDataToFile, deleteDataFromFile } = require("../dataService.js");
 
 router.use(express.json());
 
@@ -10,23 +10,23 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  if (req.method == "POST") {
-    const { firstName, lastName } = req.body;
-    const newSellerData = { firstName, lastName };
-    sellerData.data.push(newSellerData);
-    fs.writeFile(
-      "./data/sellerData.json",
-      JSON.stringify(sellerData),
-      (err) => {
-        if (err) {
-          console.error("Error writing seller data:", err);
-          res.status(500).send("Error writing seller data");
-          return;
-        }
-        res.status(200).send("Seller data updated");
-      }
-    );
+  const { firstName, lastName } = req.body;
+  const newSellerData = { firstName, lastName };
+  const success = addDataToFile("sellerData", newSellerData);
+  if (success) {
+    res.status(200).send("Seller data updated");
+  } else {
+    res.status(500).send("Error writing seller data");
   }
 });
 
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  const success = deleteDataFromFile("sellerData", id);
+  if (success) {
+    res.status(200).send("Seller deleted successfully");
+  } else {
+    return res.status(500).send("Error writing Seller data");
+  }
+});
 module.exports = router;

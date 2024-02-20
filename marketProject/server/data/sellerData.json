@@ -1,13 +1,1 @@
-{
-  "data": [
-    { "firstName": "Petra", "lastName": "Vileid" },
-    { "firstName": "Ian", "lastName": "Nodier" },
-    { "firstName": "Ian", "lastName": "Nodier" },
-    { "firstName": "Ian", "lastName": "Wilson" },
-    { "firstName": "Petra", "lastName": "Vileid" }
-  ],
-  "columns": [
-    { "label": "First Name", "dataField": "firstName" },
-    { "label": "Last Name", "dataField": "lastName" }
-  ]
-}
+{"data":[{"firstName":"seller","lastName":"seller","id":"50bf6644-e8a2-4b19-ba2c-2c64e39e2cbc"},{"firstName":"Kolyan","lastName":"Indirovich","id":"2a4e1e14-96fa-47ea-85ef-d458bad802a9"},{"firstName":"Petra","lastName":"Vileid","id":"3410d2e7-775c-4f7a-843f-14034a297edd"},{"firstName":"test","lastName":"test","id":"5c594b15-3cf0-4342-bfea-c87fc43646e0"},{"firstName":"test","lastName":"test","id":"f173a614-cf0a-4a2d-b89a-6a7ea744cd12"},{"firstName":"test","lastName":"test","id":"1744c6b0-eb42-4c39-bf9b-2bd626656b65"}],"columns":[{"label":"First Name","dataField":"firstName"},{"label":"Last Name","dataField":"lastName"}]}

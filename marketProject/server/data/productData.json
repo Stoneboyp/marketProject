@@ -1,11 +1,1 @@
-{
-  "data": [
-    { "productType": "Potato" },
-    { "productType": "Lemon" },
-    { "productType": "Cupcakes" },
-    { "productType": "Tomato" },
-    { "productType": "Orange" },
-    { "productType": "Juice" }
-  ],
-  "columns": [{ "label": "Product Type", "dataField": "productType" }]
-}
+{"data":[{"productType":"Milk","id":"6ebd8387-fdbf-4458-9a08-6643a539ddd3"},{"productType":"Onion","id":"09086efe-59e9-44b0-a7a6-d7c202eca12c"},{"productType":"Lemon","id":"a3bd250a-7c0f-4c04-9764-517f5cdd0fb3"}],"columns":[{"label":"Product Type","dataField":"productType"}]}

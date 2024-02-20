@@ -10,9 +10,6 @@ export const Sellers = () => {
   const { data, isLoading, error } = useGetSellers();
   const { isModalOpen, setIsModalOpen, sellers, setSellers } =
     useContext(AppContext);
-  const handleAddSeller = (newSeller) => {
-    setSellers([...sellers, newSeller]);
-  };
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -22,13 +19,11 @@ export const Sellers = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <Filter />
-          <ModalButton />
+          <ModalButton dataType={"seller"} />
         </div>
         <List data={data.data} columns={data.columns} />
       </div>
-      {isModalOpen && (
-        <AddValueModal dataType={"seller"} addData={handleAddSeller} />
-      )}
+      {isModalOpen && <AddValueModal dataType={"seller"} />}
     </>
   );
 };

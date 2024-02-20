@@ -1,7 +1,23 @@
 {
   "data": [
-    { "firstName": "Ian", "lastName": "Wilson", "productType": "Tomato" },
-    { "firstName": "Van", "lastName": "Chester", "productType": "Orange" }
+    {
+      "firstName": "Kolyan",
+      "lastName": "Indirovich",
+      "productType": "Milk",
+      "id": "73cf26e9-031b-4032-9d61-11a6da121245"
+    },
+    {
+      "firstName": "Petra",
+      "lastName": "Vileid",
+      "productType": "Onion",
+      "id": "9cf43af8-31b6-49c6-8327-f928ede08631"
+    },
+    {
+      "firstName": "Kolyan",
+      "lastName": "Indirovich",
+      "productType": "Onion",
+      "id": "5705a584-480f-48b1-9f1d-f2abaa4eb743"
+    }
   ],
   "columns": [
     { "label": "First Name", "dataField": "firstName" },
